@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.venv/
+venv/
+
+# .NET
+bin/
+obj/
+*.gha
+*.user
+
+# IDE
+.idea/
+.vs/
+*.swp
+.DS_Store
+
+# Local data
+examples/data/*.ply
+examples/data/*.npy
+!examples/data/.gitkeep
+
+# Private working notes
+CLAUDE.md
+PLAN.md
+STATUS.md
+plan.txt
