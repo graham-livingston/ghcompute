@@ -55,7 +55,7 @@ GHCompute occupies the gap between these: GPU-accelerated *primitives* for point
 
 1. Install Rhino 8 (Mac or Windows).
 2. Install Python 3.11+ and the compute package: `pip install -e python` from a clone of this repo (pulls in `torch`, `numpy`, `plyfile`). MPS is used automatically on Apple Silicon, CUDA on supported NVIDIA hardware, CPU otherwise.
-3. Download the latest `.gha` from [Releases](#) and drop it into your Grasshopper Libraries folder:
+3. Download the latest `.gha` from [Releases](https://github.com/graham-livingston/ghcompute/releases) and drop it into your Grasshopper Libraries folder:
    - **Mac:** `~/Library/Application Support/McNeel/Rhinoceros/8.0/Plug-ins/Grasshopper (b45a29b1-4343-4035-989e-044e8580d9cf)/Libraries/`. The GUID-suffixed folder is the one Rhino 8 scans; the plain `Plug-ins/Grasshopper/Libraries/` folder is not. Run `xattr -c GHCompute.gha` first to clear the download quarantine flag.
    - **Windows:** `%APPDATA%\Grasshopper\Libraries\` (untested in v0.1).
 4. Quit Rhino fully and reopen.
@@ -64,7 +64,7 @@ The plugin looks for `python3` on `PATH`, then in the usual Homebrew and system 
 
 ## Quick start
 
-Open `examples/knn_demo.gh`. Loads a sample point cloud, runs `GPU k-NN`, visualizes neighbor connections.
+In Grasshopper, find the two components under the **GHCompute** tab. Feed any list of points (Populate 3D works well) into `GPU k-NN` with a `k` slider, or into `GPU Voxel Downsample` with a voxel-size slider. The component message bar shows the round-trip time. An example definition is coming in `examples/`.
 
 The Python layer also runs standalone, without Rhino, on any PLY file:
 
@@ -113,7 +113,7 @@ The takeaway: the sidecar architecture works, and **the gain is workload-depende
 ## Building from source
 
 ```
-git clone https://github.com/<user>/ghcompute.git
+git clone https://github.com/graham-livingston/ghcompute.git
 cd ghcompute
 # Python side
 pip install -e "python[dev]"
